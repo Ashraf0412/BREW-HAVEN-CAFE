@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew Haven Cafe</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fff8e9;
+      color: #ffffff;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #fff;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #daa75f;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('https://i.redd.it/a30hhynzs7h81.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #000000;
+      padding: 20px;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.663);
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      background: #ffffff;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 100px 60px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #834200;
+    }
+
+    /* Menu */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: #5a2a0c;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(235, 235, 235, 0.08);
+      transition: 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .menu-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .price {
+      color: #ffdfc0;
+      font-weight: 600;
+    }
+
+    /* About */
+    .about {
+      background: #603405;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #210101;
+      font-size: 15px;
+    }
+
+    footer {
+      background: #6a3717;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      nav {
+        padding: 15px 25px;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 80px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>Brew Haven</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Welcome to Brew Haven ☕</h2>
+      <p>Where every sip tells a story.</p>
+      <button class="btn" onclick="scrollToMenu()">Explore Menu</button>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu">
+    <h2>Our Specials</h2>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
+        <h3>Cappuccino</h3>
+        <p>Rich espresso with steamed milk.</p>
+        <p class="price">₹180</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+        <h3>Latte</h3>
+        <p>Silky smooth milk coffee.</p>
+        <p class="price">₹200</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+        <h3>Mocha</h3>
+        <p>Chocolate infused delight.</p>
+        <p class="price">₹220</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://www.mybakingaddiction.com/wp-content/uploads/2022/08/plated-blueberry-cheesecake-1024x1536.jpg">
+        <h3>Blueberry Cake</h3>
+        <p>Berries crushed delight.</p>
+        <p class="price">₹210</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://jalojog.com/wp-content/uploads/2024/04/Cold_Coffee.jpg">
+        <h3>Cold Coffee</h3>
+        <p>Cold and cool.</p>
+        <p class="price">₹110</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://www.healthykadai.com/wp-content/uploads/2024/03/the-making-of-Oreo-Cold-Coffee-Step-by-Step-Guide.jpg">
+        <h3>OREO Cold Coffee</h3>
+        <p>Coffee beans fused with oreo lush</p>
+        <p class="price">₹150</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://assets.surlatable.com/m/6ae5b930e82d3ed1/72_dpi_webp-REC-505190-Red-Velvet-Layered-Cake-jpg">
+        <h3>RED velvet cake</h3>
+        <p>Taste Velvet textured cake.</p>
+        <p class="price">₹200</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://www.crowdedkitchen.com/wp-content/uploads/2026/02/Chocolate-Lava-Cakes-11.jpg">
+        <h3>Choco Lava Cake</h3>
+        <p>Break the crust and enjoy the creamy delight.</p>
+        <p class="price">₹210</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://img-global.cpcdn.com/recipes/0356d515b24176dc/680x781cq80/oreo-kit-kat-shake-recipe-main-photo.jpg">
+        <h3>KitKat Shake</h3>
+        <p>Try this, it's Not your casual KitKat break.</p>
+        <p class="price">₹90</p>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://sallysbakingaddiction.com/wp-content/uploads/2017/07/whole-wheat-waffles-2.jpg">
+        <h3>Creamy Waffles</h3>
+        <p>Taste the chocolaty waffles</p>
+        <p class="price">₹70</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about">
+      <p>
+        Brew Haven Cafe is your cozy escape from the everyday rush. We serve
+        handcrafted coffees, delicious desserts, and warm conversations.
+        Whether you're here to work, relax, or meet friends — our cafe feels
+        like home.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Brew Haven Cafe | Made with ❤</p>
+  </footer>
+
+  <script>
+    function scrollToMenu() {
+      document.getElementById('menu').scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      alert('Thank you! Your message has been sent ☕');
+    }
+  </script>
+
+</body>
+</html>
